@@ -9,7 +9,9 @@ st.write('With each question, you have 5 choices from "totally disagree" to "tot
 #Answer list:
 choices = ['Totally Disagree','Disagree','Confused','Agree','Totally Agree']
 score_ace = 0
+score_tmp = 0
 def calculate(score, question):
+    score = 0
     if question == ('Totally Disagree'):
         score += 1
     elif question == ('Disagree'):
@@ -35,7 +37,8 @@ st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', un
 #     score_ace += 4
 # else:
 #     score_ace += 5 
-calculate(score_ace,q1)
+calculate(score_tmp,q1)
+score_ace += score_tmp
 st.write('Score: ',score_ace)
 q2 = st.radio('2. Khi tôi biết mục tiêu của mình là gì và cần làm gì để đạt được mục tiêu đó thì tôi thường cố gắng làm đến nơi đến chốn:',options=choices)
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
