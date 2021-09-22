@@ -1,6 +1,8 @@
 from os import write
 import streamlit as st
 import numpy as np
+import pickle as pkle
+import os.path
 
 st.title('ACE Model')
 st.write('This is ACE part with 5 questions.')
@@ -59,3 +61,29 @@ q5 = st.radio('5. Tôi thường đạt được mục tiêu đã đặt ra',opt
 score_tmp = calculate(score_tmp,q5)
 score_ace += score_tmp
 st.write('Score: ',score_ace)
+
+pages = ['Page1','Page2','Page3']
+
+if os.path.isfile('next.p'):
+    next_clicked = pkle.load(open('next.p', 'rb'))
+    if next_clicked == len(pages):
+        next_clicked = 0 
+else:
+    next_clicked = 0 
+
+if next:
+    next_clicked = next_clicked+1
+    if next_clicked == len(pages):
+        next_clicked = 0 
+
+choice = st.sidebar.radio("Pages",('Page1','Page2', 'Page3'), index=next_clicked)
+pkle.dump(pages.index(choice), open('next.p', 'wb'))
+
+if choice == 'Page1':
+    st.title('Page 1')
+elif choice == 'Page2':
+    st.title('Page 2')
+elif choice == 'Page3':
+    st.title('Page 3')
+
+next = st.button('Go to next page')
