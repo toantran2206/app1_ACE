@@ -43,4 +43,19 @@ q2 = st.radio('2. Khi tôi biết mục tiêu của mình là gì và cần làm
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
 score_tmp = calculate(score_tmp,q2)
 score_ace += score_tmp
+
+q3 = st.radio('3. Khi bắt đầu một việc gì, tôi luôn đặt ra tiêu chuẩn rõ ràng về kết quả đạt được và có kế hoạch hành động cụ thể:',options=choices)
+st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+score_tmp = calculate(score_tmp,q3)
+score_ace += score_tmp
+
+
+q4 = st.radio('4. Trong mọi dự án, tôi luôn giữ được nhiệt huyết và luôn hoàn thành đúng hạn với tiêu chuẩn cao nhất có thể.',options=choices)
+st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+score_tmp = calculate(score_tmp,q4)
+score_ace += score_tmp
+
+q5 = st.radio('5. Tôi thường đạt được mục tiêu đã đặt ra',options=choices)
+score_tmp = calculate(score_tmp,q5)
+score_ace += score_tmp
 st.write('Score: ',score_ace)
