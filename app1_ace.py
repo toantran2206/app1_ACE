@@ -20,7 +20,7 @@ def calculate(score, question):
         score += 4
     else:
         score += 5 
-
+    return score
 #Questions
 # st.write('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức')
 q1 = st.radio('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức', options= choices)
