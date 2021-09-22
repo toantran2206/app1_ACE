@@ -39,16 +39,8 @@ st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', un
 #     score_ace += 5 
 score_tmp = calculate(score_tmp,q1)
 score_ace += score_tmp
-st.write('Score: ',score_ace)
 q2 = st.radio('2. Khi tôi biết mục tiêu của mình là gì và cần làm gì để đạt được mục tiêu đó thì tôi thường cố gắng làm đến nơi đến chốn:',options=choices)
 st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
-# if q2 == ('Totally Disagree'):
-#    score_ace += 1
-# elif q2 == ('Disagree'):
-#     score_ace += 2
-# elif q1 == ('Confused'):
-#     score_ace += 3
-# elif q1 == ('Agree'):
-#     score_ace += 4
-# else:
-#     score_ace += 5 
+score_tmp = calculate(score_tmp,q2)
+score_ace += score_tmp
+st.write('Score: ',score_ace)
