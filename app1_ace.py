@@ -153,6 +153,7 @@ def page_fifth():
 def page_sixth():
     st.title("Reflexivity")
 
-    
+
 if __name__ == "__main__":
     main()
+    page_second()
