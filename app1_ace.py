@@ -168,7 +168,9 @@ def page_third():
             score += 1
         return score
     score_tmp = 0
-    score_scm += cal(score_scm,q1,choice1)
+    score_tmp = cal(score_scm,q1,choice1)
+    score_scm += score_tmp
+    st.write('Score: ',score_scm)
 
     choice2 = {'A':'Tôi dằn vặt trong đau khổ một thời gian dài',
     'B':'Tôi thấy dằn vặt nhưng nhanh chóng có lý do phù hợp cho việc đó',
@@ -177,6 +179,7 @@ def page_third():
     q2 = st.radio('2.Khi làm một điều gì đó thiếu trung thực, bạn thường:', options= choice2.values())
     score_tmp = cal(score_scm,q2,choice2)
     score_scm += score_tmp
+    st.write('Score: ',score_scm)
 
     choice3 = {'A':'Tôi thấy tệ về bản thân và quyết tâm không bao giờ làm lại hành vi đó nữa',
     'B':'Tôi thấy khó chịu và tìm lý do để bào chữa',
@@ -185,6 +188,7 @@ def page_third():
     q3 = st.radio('3.Bạn thường có xu hướng gì sau khi làm một hành vi thiếu trung thực:', options= choice3.values())
     score_tmp = cal(score_scm,q3,choice3)
     score_scm += score_tmp
+    st.write('Score: ',score_scm)
 
     choice4 = {'A':'Chắc chắn không làm dù lý do gì.',
     'B':'Sẽ đắn đo và tìm lý do thuyết phục để làm việc đó hay không',
