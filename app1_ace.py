@@ -155,11 +155,11 @@ def page_third():
     q1 = st.radio('1.Nhận định nào sau đây mô tả đúng nhất về bạn:', options= choice1.values())
     # score_tmp = calculate(score_tmp,q1)
     # score_scm += score_tmp
-    if q1 == choice1.keys('1'):
+    if q1 == choice1.keys('A'):
         score_tmp += 4
-    elif q1 == choice1.keys('2'):
+    elif q1 == choice1.keys('B'):
         score_tmp += 3
-    elif q1 == choice1.keys('3'):
+    elif q1 == choice1.keys('C'):
         score_tmp += 2
     else:
         score_tmp += 1
