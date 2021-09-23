@@ -38,7 +38,7 @@ def main():
         st.write('Hi, ',user_input)
         st.write('This a diver-consciousness quiz with 40 questions. There is not right or wrong answer. You just need to think carefully and choose which suites you best!')
         if st.button("Click here to start"):
-            st.sidebar:
+            with st.sidebar:
                 page = st.radio("Select your page", tuple(pages.keys()))
             pages[page]()
 #Home page
