@@ -167,18 +167,16 @@ def page_third():
         else:
             score += 1
         return score
-    score_tmp = 0
-    score_tmp = cal(score_scm,q1,choice1)
-    score_scm += score_tmp
-    st.write('Score: ',score_scm)
+    # score_tmp = 0
+    score_scm += cal(score_scm,q1,choice1)
 
     choice2 = {'A':'Tôi dằn vặt trong đau khổ một thời gian dài',
     'B':'Tôi thấy dằn vặt nhưng nhanh chóng có lý do phù hợp cho việc đó',
     'C':'Tôi chấp nhận vì điều không trung thực đó trong phạm vi cho phép',
     'D':'Tôi không thấy có vấn đề gì'}
     q2 = st.radio('2.Khi làm một điều gì đó thiếu trung thực, bạn thường:', options= choice2.values())
-    score_tmp = cal(score_scm,q2,choice2)
-    score_scm += score_tmp
+    score_scm += cal(score_scm,q2,choice2)
+    # score_scm += score_tmp
     st.write('Score: ',score_scm)
 
     choice3 = {'A':'Tôi thấy tệ về bản thân và quyết tâm không bao giờ làm lại hành vi đó nữa',
@@ -186,8 +184,8 @@ def page_third():
     'C':'Tôi xem xét lại việc thiếu trung thực và cho rằng nó là ngoại lệ có thể chấp nhận',
     'D':'Tôi thấy không có vấn đề gì'}
     q3 = st.radio('3.Bạn thường có xu hướng gì sau khi làm một hành vi thiếu trung thực:', options= choice3.values())
-    score_tmp = cal(score_scm,q3,choice3)
-    score_scm += score_tmp
+    score_scm += cal(score_scm,q3,choice3)
+    # score_scm += score_tmp
     st.write('Score: ',score_scm)
 
     choice4 = {'A':'Chắc chắn không làm dù lý do gì.',
@@ -195,8 +193,8 @@ def page_third():
     'C':'Sẽ xem lại việc này có nằm trong danh sách cho phép của tôi không',
     'D':'Không cần phải đắn đo gì nhiều'}
     q4 = st.radio('4.Đứng trước một cơ hội để thiếu trung thực (để có một lợi ích hoặc tránh một nỗi đau) nhưng không bị ai phát hiện, tôi sẽ:', options= choice4.values())
-    score_tmp = cal(score_scm,q4,choice4)
-    score_scm += score_tmp
+    score_scm += cal(score_scm,q4,choice4)
+    # score_scm += score_tmp
     st.write('Score: ',score_scm)
 
 def page_fourth():
