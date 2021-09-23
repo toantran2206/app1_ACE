@@ -79,19 +79,7 @@ def page_second():
     choices = ['Totally Disagree','Disagree','Confused','Agree','Totally Agree']
     score_ace = 0
     score_tmp = 0
-    # def calculate(score, question):
-    #     score = 0
-    #     if question == ('Totally Disagree'):
-    #         score += 1
-    #     elif question == ('Disagree'):
-    #         score += 2
-    #     elif question == ('Confused'):
-    #         score += 3
-    #     elif question == ('Agree'):
-    #         score += 4
-    #     else:
-    #         score += 5 
-    #     return score
+    
     #Questions
     # st.write('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức')
     q1 = st.radio('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức', options= choices)
@@ -224,9 +212,65 @@ def page_fourth():
 def page_fifth():
     st.title("Motivation")
 
+    score_mov = 0
+    #Questions
+    q1 = st.radio('1. Khả năng chịu đựng áp lực học tập/công việc của tôi cao.', options= choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_mov += calculate(score_mov,q1)
+
+    q2 = st.radio('2. Tôi sẵn sàng làm thêm giờ để hoàn thành công việc mà không cần ai ép buộc.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_mov += calculate(score_mov,q2)
+
+    q3 = st.radio('3. Tôi kiên định với mục tiêu mà bản thân đặt ra, dù nó có thể đi ngược lại ý kiến của người khác.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_mov += calculate(score_mov,q3)
+
+
+    q4 = st.radio('4. Những lợi ích vật chất KHÔNG là động lực lớn nhất của tôi.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_mov += calculate(score_mov,q4)
+
+    q5 = st.radio('5. Tôi phấn đấu nỗ lực không chỉ vì chức danh, địa vị của mình.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_mov += calculate(score_mov,q5)
+
+    q6 = st.radio('6. Tôi thích khoe những thành tích của tôi lên mạng xã hội.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_mov += calculate(score_mov,q6)
+    st.write('Score: ',score_mov)
 
 def page_sixth():
     st.title("Reflexivity")
+    score_ref = 0 #score for reflexivity
+     #Questions
+    q1 = st.radio('1. Tôi hiếm khi xem xét lại góc nhìn, hướng xử lý của mình khi giải quyết vấn đề.', options= choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ref += calculate(score_ref,q1)
+
+    q2 = st.radio('2. Tôi luôn phân loại mọi thứ theo tiêu chuẩn tốt - xấu, đúng sai rõ ràng.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ref += calculate(score_ref,q2)
+
+    q3 = st.radio('3. Khi có ai đó chỉ ra điểm không hợp lý trong hệ thống niềm tin của tôi, tôi có xu hướng nghi ngờ với nhận định đó thay vì tìm hiểu thêm về nó.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ref += calculate(score_ref,q3)
+
+
+    q4 = st.radio('4. Tôi tin rằng bất kỳ vấn đề nào cũng có một giải pháp hoàn hảo.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ref += calculate(score_ref,q4)
+
+    q5 = st.radio('5. Khi tôi đã quyết định đưa ra một giải pháp, tôi thường thực thi đến cùng thay vì cân nhắc, kiểm chứng lại.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ref += calculate(score_ref,q5)
+
+    q6 = st.radio('6. Tôi có những nguyên tắc đạo đức làm nền tảng và hiếm khi chất vấn chúng.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ref += calculate(score_ref,q6)
+    st.write('Score: ',score_ref)
+
+
 def page_seventh():
     st.title("Open Heart and Open Will")
     st.text('This is second level of Open Mind. There are 2 parts of this level: Open Heart and Open Will')
