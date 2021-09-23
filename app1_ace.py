@@ -151,7 +151,7 @@ def page_third():
     choice1 = {'A':'Tôi là người trung thực trong mọi hoàn cảnh', 
     'B': 'Tôi trung thực trong hầu hết các hoàn cảnh',
     'C': 'Tôi có một danh sách việc gì phải trung thực, việc gì thì không nhất thiết',
-    'D': 'Tôi không quan tâm đến tính trung thực']
+    'D': 'Tôi không quan tâm đến tính trung thực'}
     q1 = st.radio('1.Nhận định nào sau đây mô tả đúng nhất về bạn:', options= choice1.values())
     # score_tmp = calculate(score_tmp,q1)
     # score_scm += score_tmp
