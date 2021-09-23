@@ -4,86 +4,140 @@ import numpy as np
 import pickle as pkle
 import os.path
 
-st.title('ACE Model')
-st.write('This is ACE part with 5 questions.')
-st.write('With each question, you have 5 choices from "totally disagree" to "totally agree"')
+#Main page
+def main():
+    #Register pages
+    pages = {
+        "Home page": page_first,
+        "ACE Model": page_second,
+        "Self-Concept Maintenance": page_third,
+        "Open Mind": page_fourth,
+        "Motivation":page_fifth,
+        "Reflexivity": page_sixth,
+    }
+    if "page" not in st.session_state:
+        st.session_state.update({
+            # Default page
+            "page": "Home page",
 
-#Answer list:
-choices = ['Totally Disagree','Disagree','Confused','Agree','Totally Agree']
-score_ace = 0
-score_tmp = 0
-def calculate(score, question):
-    score = 0
-    if question == ('Totally Disagree'):
-        score += 1
-    elif question == ('Disagree'):
-        score += 2
-    elif question == ('Confused'):
-        score += 3
-    elif question == ('Agree'):
-        score += 4
-    else:
-        score += 5 
-    return score
-#Questions
-# st.write('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức')
-q1 = st.radio('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức', options= choices)
-st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
-# if q1 == ('Totally Disagree'):
-#    score_ace += 1
-# elif q1 == ('Disagree'):
-#     score_ace += 2
-# elif q1 == ('Confused'):
-#     score_ace += 3
-# elif q1 == ('Agree'):
-#     score_ace += 4
+            # Radio, selectbox and multiselect options
+            "options": ["Hello", "Everyone", "Happy", "Streamlit-ing"],
+
+            # Default widget values
+            "text": "",
+            "slider": 0,
+            "checkbox": False,
+            "radio": "Hello",
+            "selectbox": "Hello",
+            "multiselect": ["Hello", "Everyone"],
+        })
+    st.header('Diver-conscinousness')
+    st.write('Hi there! Welcome to our diver-consciousness app!')
+    user_input = st.text_input("Please tell us your name:")
+    if user_input:
+        st.write('Hi, ',user_input)
+        st.write('This a diver-consciousness quiz with 40 questions. There is not right or wrong answer. You just need to think carefully and choose which suites you best!')
+        if st.button("Click here to start"):
+            st.sidebar:
+                page = st.radio("Select your page", tuple(pages.keys()))
+            pages[page]()
+#Home page
+def page_first():
+    st.write(f"""
+    # Settings values
+    - **Input**: {st.session_state.text}
+    - **Slider**: `{st.session_state.slider}`
+    - **Checkbox**: `{st.session_state.checkbox}`
+    - **Radio**: {st.session_state.radio}
+    - **Selectbox**: {st.session_state.selectbox}
+    - **Multiselect**: {", ".join(st.session_state.multiselect)}
+    """)
+
+#ACE Model page
+def page_second():
+    st.title('ACE Model')
+    st.write('This is ACE part with 5 questions.')
+    st.write('With each question, you have 5 choices from "totally disagree" to "totally agree"')
+
+    #Answer list:
+    choices = ['Totally Disagree','Disagree','Confused','Agree','Totally Agree']
+    score_ace = 0
+    score_tmp = 0
+    def calculate(score, question):
+        score = 0
+        if question == ('Totally Disagree'):
+            score += 1
+        elif question == ('Disagree'):
+            score += 2
+        elif question == ('Confused'):
+            score += 3
+        elif question == ('Agree'):
+            score += 4
+        else:
+            score += 5 
+        return score
+    #Questions
+    # st.write('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức')
+    q1 = st.radio('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức', options= choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    # if q1 == ('Totally Disagree'):
+    #    score_ace += 1
+    # elif q1 == ('Disagree'):
+    #     score_ace += 2
+    # elif q1 == ('Confused'):
+    #     score_ace += 3
+    # elif q1 == ('Agree'):
+    #     score_ace += 4
+    # else:
+    #     score_ace += 5 
+    score_tmp = calculate(score_tmp,q1)
+    score_ace += score_tmp
+    q2 = st.radio('2. Khi tôi biết mục tiêu của mình là gì và cần làm gì để đạt được mục tiêu đó thì tôi thường cố gắng làm đến nơi đến chốn:',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_tmp = calculate(score_tmp,q2)
+    score_ace += score_tmp
+
+    q3 = st.radio('3. Khi bắt đầu một việc gì, tôi luôn đặt ra tiêu chuẩn rõ ràng về kết quả đạt được và có kế hoạch hành động cụ thể:',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_tmp = calculate(score_tmp,q3)
+    score_ace += score_tmp
+
+
+    q4 = st.radio('4. Trong mọi dự án, tôi luôn giữ được nhiệt huyết và luôn hoàn thành đúng hạn với tiêu chuẩn cao nhất có thể.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_tmp = calculate(score_tmp,q4)
+    score_ace += score_tmp
+
+    q5 = st.radio('5. Tôi thường đạt được mục tiêu đã đặt ra',options=choices)
+    score_tmp = calculate(score_tmp,q5)
+    score_ace += score_tmp
+    st.write('Score: ',score_ace)
+
+    # pages = ['Page1','Page2','Page3']
+
+# if os.path.isfile('next.p'):
+#     next_clicked = pkle.load(open('next.p', 'rb'))
+#     if next_clicked == len(pages):
+#         next_clicked = 0 
 # else:
-#     score_ace += 5 
-score_tmp = calculate(score_tmp,q1)
-score_ace += score_tmp
-q2 = st.radio('2. Khi tôi biết mục tiêu của mình là gì và cần làm gì để đạt được mục tiêu đó thì tôi thường cố gắng làm đến nơi đến chốn:',options=choices)
-st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
-score_tmp = calculate(score_tmp,q2)
-score_ace += score_tmp
+#     next_clicked = 0 
 
-q3 = st.radio('3. Khi bắt đầu một việc gì, tôi luôn đặt ra tiêu chuẩn rõ ràng về kết quả đạt được và có kế hoạch hành động cụ thể:',options=choices)
-st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
-score_tmp = calculate(score_tmp,q3)
-score_ace += score_tmp
+# if next:
+#     next_clicked = next_clicked+1
+#     if next_clicked == len(pages):
+#         next_clicked = 0 
 
+# choice = st.sidebar.radio("Pages",('Page1','Page2', 'Page3'), index=next_clicked)
+# pkle.dump(pages.index(choice), open('next.p', 'wb'))
 
-q4 = st.radio('4. Trong mọi dự án, tôi luôn giữ được nhiệt huyết và luôn hoàn thành đúng hạn với tiêu chuẩn cao nhất có thể.',options=choices)
-st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
-score_tmp = calculate(score_tmp,q4)
-score_ace += score_tmp
+# if choice == 'Page1':
+#     st.title('Page 1')
+# elif choice == 'Page2':
+#     st.title('Page 2')
+# elif choice == 'Page3':
+#     st.title('Page 3')
 
-q5 = st.radio('5. Tôi thường đạt được mục tiêu đã đặt ra',options=choices)
-score_tmp = calculate(score_tmp,q5)
-score_ace += score_tmp
-st.write('Score: ',score_ace)
+# next = st.button('Go to next page')
+#
 
-pages = ['Page1','Page2','Page3']
-
-if os.path.isfile('next.p'):
-    next_clicked = pkle.load(open('next.p', 'rb'))
-    if next_clicked == len(pages):
-        next_clicked = 0 
-else:
-    next_clicked = 0 
-
-if next:
-    next_clicked = next_clicked+1
-    if next_clicked == len(pages):
-        next_clicked = 0 
-
-choice = st.sidebar.radio("Pages",('Page1','Page2', 'Page3'), index=next_clicked)
-pkle.dump(pages.index(choice), open('next.p', 'wb'))
-
-if choice == 'Page1':
-    st.title('Page 1')
-elif choice == 'Page2':
-    st.title('Page 2')
-elif choice == 'Page3':
-    st.title('Page 3')
-
-next = st.button('Go to next page')
+main()
