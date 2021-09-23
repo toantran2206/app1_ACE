@@ -94,16 +94,6 @@ def page_second():
     # st.write('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức')
     q1 = st.radio('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức', options= choices)
     st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
-    # if q1 == ('Totally Disagree'):
-    #    score_ace += 1
-    # elif q1 == ('Disagree'):
-    #     score_ace += 2
-    # elif q1 == ('Confused'):
-    #     score_ace += 3
-    # elif q1 == ('Agree'):
-    #     score_ace += 4
-    # else:
-    #     score_ace += 5 
     score_tmp = calculate(score_tmp,q1)
     score_ace += score_tmp
     q2 = st.radio('2. Khi tôi biết mục tiêu của mình là gì và cần làm gì để đạt được mục tiêu đó thì tôi thường cố gắng làm đến nơi đến chốn:',options=choices)
@@ -158,6 +148,44 @@ def page_third():
     score_tmp = 0
     score_scm = 0
 
+    choice1 = {'A':'Tôi là người trung thực trong mọi hoàn cảnh', 
+    'B': 'Tôi trung thực trong hầu hết các hoàn cảnh',
+    'C': 'Tôi có một danh sách việc gì phải trung thực, việc gì thì không nhất thiết',
+    'D': 'Tôi không quan tâm đến tính trung thực']
+    q1 = st.radio('1.Nhận định nào sau đây mô tả đúng nhất về bạn:', options= choice1.values())
+    # score_tmp = calculate(score_tmp,q1)
+    # score_scm += score_tmp
+    if q1 == choice1.keys('1'):
+        score_tmp += 4
+    elif q1 == choice1.keys('2'):
+        score_tmp += 3
+    elif q1 == choice1.keys('3'):
+        score_tmp += 2
+    else:
+        score_tmp += 1
+    score_scm += score_tmp
+    score_tmp = 0
+    choice2 = ['Tôi dằn vặt trong đau khổ một thời gian dài','Tôi thấy dằn vặt nhưng nhanh chóng có lý do phù hợp cho việc đó','Tôi chấp nhận vì điều không trung thực đó trong phạm vi cho phép','Tôi không thấy có vấn đề gì']
+    q2 = st.radio('2.Khi làm một điều gì đó thiếu trung thực, bạn thường:', options= choice2)
+    score_tmp = calculate(score_tmp,q1)
+    score_scm += score_tmp
+
+    choice3 = ['Tôi thấy tệ về bản thân và quyết tâm không bao giờ làm lại hành vi đó nữa',
+    'Tôi thấy khó chịu và tìm lý do để bào chữa',
+    'Tôi xem xét lại việc thiếu trung thực và cho rằng nó là ngoại lệ có thể chấp nhận',
+    'Tôi thấy không có vấn đề gì']
+    q3 = st.radio('3.Bạn thường có xu hướng gì sau khi làm một hành vi thiếu trung thực:', options= choice3)
+    score_tmp = calculate(score_tmp,q1)
+    score_scm += score_tmp
+
+    choice4 = ['Chắc chắn không làm dù lý do gì.'
+    'Sẽ đắn đo và tìm lý do thuyết phục để làm việc đó hay không'
+    'Sẽ xem lại việc này có nằm trong danh sách cho phép của tôi không',
+    'Không cần phải đắn đo gì nhiều']
+    q1 = st.radio('4.Đứng trước một cơ hội để thiếu trung thực (để có một lợi ích hoặc tránh một nỗi đau) nhưng không bị ai phát hiện, tôi sẽ:', options= choice4)
+    score_tmp = calculate(score_tmp,q1)
+    score_scm += score_tmp
+
 def page_fourth():
     st.title("Open Mind")
 
@@ -173,3 +201,4 @@ def page_sixth():
 if __name__ == "__main__":
     main()
     page_second()
+    page_third()
