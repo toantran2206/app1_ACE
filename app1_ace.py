@@ -218,6 +218,8 @@ def page_fourth():
     q5 = st.radio('5. Tôi thường cho rằng ý kiến của mình có thể sai.',options=choices)
     score_om += calculate(score_om,q5)
     st.write('Score: ',score_om)
+    if score_om >= 14 and st.button('Submit'):
+        page_seventh()
 
 def page_fifth():
     st.title("Motivation")
@@ -225,6 +227,65 @@ def page_fifth():
 
 def page_sixth():
     st.title("Reflexivity")
+def page_seventh():
+    st.title("Open Heart and Open Will")
+    st.text('This is second level of Open Mind. There are 2 parts of this level: Open Heart and Open Will')
+    st.text("Now, let's get started")
+
+    score_oh = 0
+    score_ow = 0
+    q1 = st.radio('1. Là người lãnh đạo, tôi sẵn lòng trao quyền cho người phù hợp khi cần.', options= choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_oh += calculate(score_oh,q1)
+    q2 = st.radio('2. Khi người khác nói tôi đã sai, tôi dễ dàng chấp nhận chuyện đó.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_oh += calculate(score_oh,q2)
+
+    q3 = st.radio('3. Khi lãnh đạo đội nhóm, tôi sẵn sàng chia sẻ những khó khăn của cá nhân mình.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_oh += calculate(score_oh,q3)
+
+
+    q4 = st.radio('4. Tôi có thể nhìn thấy những điều hay nơi người khác để học hỏi.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_oh += calculate(score_oh,q4)
+
+    q5 = st.radio('5. Tôi thường lắng nghe người khác chia sẻ mà không nghi ngờ.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_oh += calculate(score_oh,q5)
+
+    q6 = st.radio('6. Tôi thường lắng nghe người khác chia sẻ mà không nghi ngờ.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_oh += calculate(score_oh,q6)
+    st.write('Score: ',score_oh)
+
+    #Open Will
+    q1 = st.radio('1. Trong trường hợp cấp bách, tôi chấp nhận ra quyết định khi không đủ thông tin hơn là trì hoãn để thu thập thêm thông tin.', options= choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ow += calculate(score_ow,q1)
+
+    q2 = st.radio('2. Trong công việc, tôi thường tìm kiếm những cách thức mới thay vì chọn những giải pháp sẵn có.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ow += calculate(score_ow,q2)
+
+    q3 = st.radio('3. Tôi thường xem xét lại để cải tiến phương pháp làm việc của mình.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ow += calculate(score_ow,q3)
+
+
+    q4 = st.radio('4. Tôi thường tìm kiếm những cơ hội phát triển mới hơn là chọn công việc ổn định.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ow += calculate(score_ow,q4)
+
+    q5 = st.radio('5. Tôi thường để các thành viên trong đội nhóm tự do trình bày ý tưởng của mình.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ow += calculate(score_ow,q5)
+
+    q6 = st.radio('6. Khi đứng trước cơ hội mới, tôi sẵn sàng đón nhận dù biết rằng mình có thể thất bại.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_ow += calculate(score_ow,q6)
+    st.write('Score: ',score_ow)
+
 
 
 if __name__ == "__main__":
