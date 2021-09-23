@@ -158,11 +158,11 @@ def page_third():
     # Calculate function for Self-concept maintenance
     def cal (score, question, choice):
         score = 0
-        if q1 == choice['A']:
+        if question == choice['A']:
             score += 4
-        elif q1 == choice['B']:
+        elif question == choice['B']:
             score += 3
-        elif q1 == choice['C']:
+        elif question == choice['C']:
             score += 2
         else:
             score += 1
