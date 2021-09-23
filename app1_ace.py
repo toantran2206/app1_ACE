@@ -53,6 +53,20 @@ def page_first():
     - **Multiselect**: {", ".join(st.session_state.multiselect)}
     """)
 
+#Calculate score
+def calculate(score, question):
+    score = 0
+    if question == ('Totally Disagree'):
+        score += 1
+    elif question == ('Disagree'):
+        score += 2
+    elif question == ('Confused'):
+        score += 3
+    elif question == ('Agree'):
+        score += 4
+    else:
+        score += 5 
+    return score
 #ACE Model page
 def page_second():
     st.title('ACE Model')
@@ -63,19 +77,19 @@ def page_second():
     choices = ['Totally Disagree','Disagree','Confused','Agree','Totally Agree']
     score_ace = 0
     score_tmp = 0
-    def calculate(score, question):
-        score = 0
-        if question == ('Totally Disagree'):
-            score += 1
-        elif question == ('Disagree'):
-            score += 2
-        elif question == ('Confused'):
-            score += 3
-        elif question == ('Agree'):
-            score += 4
-        else:
-            score += 5 
-        return score
+    # def calculate(score, question):
+    #     score = 0
+    #     if question == ('Totally Disagree'):
+    #         score += 1
+    #     elif question == ('Disagree'):
+    #         score += 2
+    #     elif question == ('Confused'):
+    #         score += 3
+    #     elif question == ('Agree'):
+    #         score += 4
+    #     else:
+    #         score += 5 
+    #     return score
     #Questions
     # st.write('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức')
     q1 = st.radio('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức', options= choices)
@@ -141,6 +155,8 @@ def page_second():
 #
 def page_third():
     st.title("Self-Concept Mainteance")
+    score_tmp = 0
+    score_scm = 0
 
 def page_fourth():
     st.title("Open Mind")
