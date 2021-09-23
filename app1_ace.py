@@ -139,5 +139,13 @@ def page_second():
 
 # next = st.button('Go to next page')
 #
+def page_third():
 
-main()
+def page_fourth():
+
+def page_fifth():
+
+def page_sixth():
+
+if __name__ == "__main__":
+    main()
