@@ -140,12 +140,19 @@ def page_second():
 # next = st.button('Go to next page')
 #
 def page_third():
+    st.title("Self-Concept Mainteance")
 
 def page_fourth():
+    st.title("Open Mind")
+
 
 def page_fifth():
+    st.title("Motivation")
+
 
 def page_sixth():
+    st.title("Reflexivity")
 
+    
 if __name__ == "__main__":
     main()
