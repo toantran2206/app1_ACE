@@ -184,14 +184,14 @@ def page_third():
     q3 = st.radio('3.Bạn thường có xu hướng gì sau khi làm một hành vi thiếu trung thực:', options= choice3)
     score_scm += cal(score_scm,q3,choice3)
 
-    choice4 = {'A':'Chắc chắn không làm dù lý do gì.'
-    'B':'Sẽ đắn đo và tìm lý do thuyết phục để làm việc đó hay không'
+    choice4 = {'A':'Chắc chắn không làm dù lý do gì.',
+    'B':'Sẽ đắn đo và tìm lý do thuyết phục để làm việc đó hay không',
     'C':'Sẽ xem lại việc này có nằm trong danh sách cho phép của tôi không',
     'D':'Không cần phải đắn đo gì nhiều'}
     q4 = st.radio('4.Đứng trước một cơ hội để thiếu trung thực (để có một lợi ích hoặc tránh một nỗi đau) nhưng không bị ai phát hiện, tôi sẽ:', options= choice4)
     score_scm += cal(score_scm,q4,choice4)
     st.write('Score: ',score_scm)
-    
+
 def page_fourth():
     st.title("Open Mind")
 
