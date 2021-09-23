@@ -143,9 +143,9 @@ def page_second():
 
 # next = st.button('Go to next page')
 #
+
 def page_third():
     st.title("Self-Concept Mainteance")
-    score_tmp = 0
     score_scm = 0
 
     choice1 = {'A':'Tôi là người trung thực trong mọi hoàn cảnh', 
@@ -155,17 +155,21 @@ def page_third():
     q1 = st.radio('1.Nhận định nào sau đây mô tả đúng nhất về bạn:', options= choice1.values())
     # score_tmp = calculate(score_tmp,q1)
     # score_scm += score_tmp
-    if q1 == choice1['A']:
-        score_tmp += 4
-    elif q1 == choice1['B']:
-        score_tmp += 3
-    elif q1 == choice1['C']:
-        score_tmp += 2
-    else:
-        score_tmp += 1
-    score_scm += score_tmp
-    score_tmp = 0
-    st.write('Score: ',score_scm)
+    # Calculate function for Self-concept maintenance
+    def cal (score, question, choice):
+        score_tmp = 0
+        if q1 == choice1['A']:
+            score_tmp += 4
+        elif q1 == choice1['B']:
+            score_tmp += 3
+        elif q1 == choice1['C']:
+            score_tmp += 2
+        else:
+            score_tmp += 1
+        score += score_tmp
+        return score
+    # score_tmp = 0
+    st.write('Score: ',score_scm = cal(score_scm,q1,choice1))
     choice2 = ['Tôi dằn vặt trong đau khổ một thời gian dài','Tôi thấy dằn vặt nhưng nhanh chóng có lý do phù hợp cho việc đó','Tôi chấp nhận vì điều không trung thực đó trong phạm vi cho phép','Tôi không thấy có vấn đề gì']
     q2 = st.radio('2.Khi làm một điều gì đó thiếu trung thực, bạn thường:', options= choice2)
     score_tmp = calculate(score_tmp,q1)
