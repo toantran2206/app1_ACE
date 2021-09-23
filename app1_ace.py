@@ -155,16 +155,17 @@ def page_third():
     q1 = st.radio('1.Nhận định nào sau đây mô tả đúng nhất về bạn:', options= choice1.values())
     # score_tmp = calculate(score_tmp,q1)
     # score_scm += score_tmp
-    if q1 == choice1.keys('A'):
+    if q1 == choice1['A']:
         score_tmp += 4
-    elif q1 == choice1.keys('B'):
+    elif q1 == choice1['B']:
         score_tmp += 3
-    elif q1 == choice1.keys('C'):
+    elif q1 == choice1['C']:
         score_tmp += 2
     else:
         score_tmp += 1
     score_scm += score_tmp
     score_tmp = 0
+    st.write('Score: ',score_scm)
     choice2 = ['Tôi dằn vặt trong đau khổ một thời gian dài','Tôi thấy dằn vặt nhưng nhanh chóng có lý do phù hợp cho việc đó','Tôi chấp nhận vì điều không trung thực đó trong phạm vi cho phép','Tôi không thấy có vấn đề gì']
     q2 = st.radio('2.Khi làm một điều gì đó thiếu trung thực, bạn thường:', options= choice2)
     score_tmp = calculate(score_tmp,q1)
