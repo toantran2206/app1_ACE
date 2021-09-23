@@ -4,6 +4,8 @@ import numpy as np
 import pickle as pkle
 import os.path
 
+#Answer list:
+choices = ['Totally Disagree','Disagree','Confused','Agree','Totally Agree']
 #Main page
 def main():
     #Register pages
@@ -92,30 +94,30 @@ def page_second():
     #     return score
     #Questions
     # st.write('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức')
-    q1 = st.radio('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức', options= choices)
-    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
-    score_tmp = calculate(score_tmp,q1)
-    score_ace += score_tmp
-    q2 = st.radio('2. Khi tôi biết mục tiêu của mình là gì và cần làm gì để đạt được mục tiêu đó thì tôi thường cố gắng làm đến nơi đến chốn:',options=choices)
-    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
-    score_tmp = calculate(score_tmp,q2)
-    score_ace += score_tmp
+        q1 = st.radio('1. Tôi biết chọn việc mà làm nên hiếm khi rơi vào trạng thái kiệt sức', options= choices)
+        st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+        score_tmp = calculate(score_tmp,q1)
+        score_ace += score_tmp
+        q2 = st.radio('2. Khi tôi biết mục tiêu của mình là gì và cần làm gì để đạt được mục tiêu đó thì tôi thường cố gắng làm đến nơi đến chốn:',options=choices)
+        st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+        score_tmp = calculate(score_tmp,q2)
+        score_ace += score_tmp
 
-    q3 = st.radio('3. Khi bắt đầu một việc gì, tôi luôn đặt ra tiêu chuẩn rõ ràng về kết quả đạt được và có kế hoạch hành động cụ thể:',options=choices)
-    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
-    score_tmp = calculate(score_tmp,q3)
-    score_ace += score_tmp
+        q3 = st.radio('3. Khi bắt đầu một việc gì, tôi luôn đặt ra tiêu chuẩn rõ ràng về kết quả đạt được và có kế hoạch hành động cụ thể:',options=choices)
+        st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+        score_tmp = calculate(score_tmp,q3)
+        score_ace += score_tmp
 
 
-    q4 = st.radio('4. Trong mọi dự án, tôi luôn giữ được nhiệt huyết và luôn hoàn thành đúng hạn với tiêu chuẩn cao nhất có thể.',options=choices)
-    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
-    score_tmp = calculate(score_tmp,q4)
-    score_ace += score_tmp
+        q4 = st.radio('4. Trong mọi dự án, tôi luôn giữ được nhiệt huyết và luôn hoàn thành đúng hạn với tiêu chuẩn cao nhất có thể.',options=choices)
+        st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+        score_tmp = calculate(score_tmp,q4)
+        score_ace += score_tmp
 
-    q5 = st.radio('5. Tôi thường đạt được mục tiêu đã đặt ra',options=choices)
-    score_tmp = calculate(score_tmp,q5)
-    score_ace += score_tmp
-    st.write('Score: ',score_ace)
+        q5 = st.radio('5. Tôi thường đạt được mục tiêu đã đặt ra',options=choices)
+        score_tmp = calculate(score_tmp,q5)
+        score_ace += score_tmp
+        st.write('Score: ',score_ace)
 
     # pages = ['Page1','Page2','Page3']
 
@@ -196,7 +198,27 @@ def page_third():
 
 def page_fourth():
     st.title("Open Mind")
+    score_om = 0
+    q1 = st.radio('1. Tôi tôn trọng các suy nghĩ, góc nhìn của người khác khi cùng đối diện một vấn đề.', options= choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_om += calculate(score_om,q1)
+    q2 = st.radio('2. Tôi sẵn sàng thay đổi quan điểm, góc nhìn của mình nếu có đủ dẫn chứng thuyết phục.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_tmp = calculate(score_om,q2)
+    score_om += score_tmp
 
+    q3 = st.radio('3. Khi người khác bảo rằng ý kiến của tôi là sai, tôi không cảm thấy khó chịu.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_om += calculate(score_om,q3)
+
+
+    q4 = st.radio('4. Tôi sẵn sàng lắng nghe ý kiến của người khác, ngay cả khi quan điểm của họ có thể trái ngược với tôi.',options=choices)
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
+    score_om += calculate(score_om,q4)
+
+    q5 = st.radio('5. Tôi thường cho rằng ý kiến của mình có thể sai.',options=choices)
+    score_om += calculate(score_om,q5)
+    st.write('Score: ',score_om)
 
 def page_fifth():
     st.title("Motivation")
