@@ -105,7 +105,6 @@ def page_second():
     score_tmp = calculate(score_tmp,q5)
     score_ace += score_tmp
     st.write('Score: ',score_ace)
-    st.button("Submit")
     if st.button("Submit"):
         return score_ace
     # pages = ['Page1','Page2','Page3']
