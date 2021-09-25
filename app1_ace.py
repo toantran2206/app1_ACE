@@ -105,7 +105,9 @@ def page_second():
     score_tmp = calculate(score_tmp,q5)
     score_ace += score_tmp
     st.write('Score: ',score_ace)
-
+    st.button("Submit")
+    if st.button("Submit"):
+        return score_ace
     # pages = ['Page1','Page2','Page3']
 
 # if os.path.isfile('next.p'):
@@ -134,7 +136,7 @@ def page_second():
 #
 
 def page_third():
-    st.title("Self-Concept Mainteance")
+    st.title("Self-Concept Maintenance")
     score_scm = 0
 
     choice1 = {'A':'Tôi là người trung thực trong mọi hoàn cảnh', 
@@ -334,7 +336,8 @@ def page_seventh():
 
 if __name__ == "__main__":
     main()
-    page_second()
+    result_ace = page_second()
+    st.write("Result:",result_ace)
     page_third()
     page_fourth()
     page_fifth()
