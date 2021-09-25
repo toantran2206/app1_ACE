@@ -336,8 +336,8 @@ def page_seventh():
 if __name__ == "__main__":
     main()
     result_ace = page_second()
-    st.write("Result:",result_ace)
     page_third()
     page_fourth()
     page_fifth()
     page_sixth()
+    st.write("Result:",result_ace)
