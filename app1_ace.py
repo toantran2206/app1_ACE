@@ -211,7 +211,7 @@ def page_fourth():
     #     if score_om >= 14:
     #         page_seventh()
     if score_om >= 14:
-        t = run_oh_ow()
+        run_oh_ow()
     return score_om
         
 
