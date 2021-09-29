@@ -210,8 +210,6 @@ def page_fourth():
     # if st.button('Submit'):
     #     if score_om >= 14:
     #         page_seventh()
-    if score_om >= 14:
-        page_seventh()
     return score_om
         
 
@@ -403,7 +401,8 @@ if __name__ == "__main__":
     page_fourth()
     page_fifth()
     page_sixth()
-    re_oh,re_ow = page_seventh()
+    if re_om >= 14:
+        re_oh,re_ow = page_seventh()
     if st.button("Finish"):
         print_ace(result_ace)
         print_result(re_om,re_oh,re_ow)
