@@ -182,8 +182,8 @@ def page_third():
     q4 = st.radio('4.Đứng trước một cơ hội để thiếu trung thực (để có một lợi ích hoặc tránh một nỗi đau) nhưng không bị ai phát hiện, tôi sẽ:', options= choice4.values())
     score_scm += cal(score_scm,q4,choice4)
 
-    if st.button("Submit"):
-        return score_scm
+    # if st.button("Submit"):
+    #     return score_scm
 
 def page_fourth():
     st.title("Open Mind")
@@ -208,10 +208,10 @@ def page_fourth():
     q5 = st.radio('5. Tôi thường cho rằng ý kiến của mình có thể sai.',options=choices)
     score_om += calculate(score_om,q5)
     # st.write('Score: ',score_om)
-    if st.button('Submit'):
-        if score_om >= 14:
-            page_seventh()
-        return score_om
+    # if st.button('Submit'):
+    #     if score_om >= 14:
+    #         page_seventh()
+    #     return score_om
         
 
 def page_fifth():
@@ -245,8 +245,8 @@ def page_fifth():
     score_mov += calculate(score_mov,q6)
     
     #Submit result and prepare for advice
-    if st.button("Submit"):
-        return score_mov
+    # if st.button("Submit"):
+    #     return score_mov
 
 def page_sixth():
     st.title("Reflexivity")
@@ -278,8 +278,8 @@ def page_sixth():
     score_ref += calculate(score_ref,q6)
     
     #Submit result and prepare for advice
-    if st.button("Submit"):
-        return score_ref
+    # if st.button("Submit"):
+    #     return score_ref
 
 
 
@@ -343,8 +343,8 @@ def page_seventh():
     # st.write('Score: ',score_ow)
 
     #Submit result and prepare for advice
-    if st.button("Submit"):
-        return score_oh and score_ow
+    # if st.button("Submit"):
+    #     return score_oh and score_ow
 
 def print_om(om):
     if om in range(5,12):
