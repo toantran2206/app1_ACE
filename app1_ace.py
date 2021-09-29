@@ -211,7 +211,7 @@ def page_fourth():
     #     if score_om >= 14:
     #         page_seventh()
     if score_om >= 14:
-        run_oh_ow()
+        page_seventh()
     return score_om
         
 
@@ -283,8 +283,8 @@ def page_sixth():
     return score_ref
 
 
-class OH_OW:
-    def page_seventh(self):
+
+def page_seventh():
         st.title("Open Heart and Open Will")
         st.text('This is second level of Open Mind. There are 2 parts of this level: Open Heart and Open Will')
         st.text("Now, let's get started")
@@ -345,12 +345,10 @@ class OH_OW:
 
         #Submit result and prepare for advice
         # if st.button("Submit"):
-        self.oh = score_oh
-        self.ow = score_ow
-def run_oh_ow():
-    return OH_OW()
+        return score_oh,score_ow
 
-def print_om(om):
+
+def print_result(om,oh,ow):
     if om in range(5,12):
         st.write('Điểm của bạn:',om)
         st.write('Trong mức điểm số này, bạn chưa cởi mở lắm với những tư tưởng khác biệt. Bạn hãy cố gắng lắng nghe những quan điểm khác biệt vì nó có thể giúp bạn trở nên phong phú hơn, hiểu sâu sắc hơn góc nhìn của chính mình.')
@@ -371,6 +369,16 @@ def print_om(om):
     else:
         st.write('Điểm của bạn:',oh)
         st.write('Đây là dấu hiệu tốt cho thấy bạn có thể có một con tim rộng mở. Hãy cứ là chính mình bạn nhé.')
+    if ow in range(6,15):
+        st.write('Điểm của bạn:',ow)
+        st.write('Bạn ơi, ở mức điểm này, đây có thể là dấu cho thấy bạn chưa thực sự có ý chí cởi mở. Bạn có thể bắt đầu cải thiện tiêu chí này bằng việc thực hiện một vài hành động ngoài vòng an toàn. Hãy học cách quan sát để nhìn ra những cơ hội trong tương lai cũng như dám nắm bắt nó.')
+    elif ow in range(15,23):
+        st.write('Điểm của bạn:',ow)
+        st.write('Đây là dấu hiệu cho thấy bạn đang dần học cách bước ra vùng an toàn của bản thân và dám tiến về phía trước. Bạn hãy dành chỗ cho những điều mới xảy đến với mình nhé.')
+    else:
+        st.write('Điểm của bạn:',ow)
+        st.write('Đây là dấu hiệu tốt cho thấy bạn có thể có một ý chí rộng mở. Hãy dành thêm không gian cho mình và người khác để đón nhận những cơ hội nhé.')
+
 
 def print_ace(ace):
     if ace in range(7,17):
@@ -391,8 +399,12 @@ def print_ace(ace):
 if __name__ == "__main__":
     main()
     result_ace = page_second()
-    page_third()
+    re_om = page_third()
     page_fourth()
     page_fifth()
     page_sixth()
-    print_ace(result_ace)
+    re_oh,re_ow = page_seventh()
+    if st.button("Finish"):
+        print_ace(result_ace)
+        print_result(re_om,re_oh,re_ow)
+    
