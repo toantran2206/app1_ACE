@@ -348,32 +348,41 @@ def page_seventh():
 
 def print_result(om,oh,ow):
     if om in range(5,12):
+        st.write('Open Mind')
         st.write('Điểm của bạn:',om)
         st.write('Trong mức điểm số này, bạn chưa cởi mở lắm với những tư tưởng khác biệt. Bạn hãy cố gắng lắng nghe những quan điểm khác biệt vì nó có thể giúp bạn trở nên phong phú hơn, hiểu sâu sắc hơn góc nhìn của chính mình.')
     elif om in range (12,19):
+        st.write('Open Mind')
         st.write('Điểm của bạn:',om)
         st.write('Trong mức điểm số này, bạn có thể không open mind như bạn nghĩ. Tuy nhiên, hầu hết mọi người đều có thể không đạt được 1 trong 4 tiêu chí trên. Bạn có thể bắt đầu bằng cách học theo Benjamin Fraklin:”I could be wrong, but…”')
     else:
+        st.write('Open Mind')
         st.write('Điểm của bạn:',om)
         st.write('Trong mức điểm số, đây là dấu hiệu tốt cho thấy bạn có sự cởi mở, tôn trọng những tư tưởng, ý kiến khác cũng như có khả năng làm chủ cảm xúc của mình.')
 
     #Print Open Heart and Open Will
     if oh in range(6,15):
+        st.write('Open Heart')
         st.write('Điểm của bạn:',oh)
         st.write('Đôi khi, chúng ta không cần cố gắng tỏ ra hoàn hảo, bạn nên can đảm chấp nhận con người thật của chính mình, từ đó chia sẻ những điều thiếu sót cho người khác. Bạn có thể cố gắng đặt mình vào vị trí của người khác để hiểu hơn lựa chọn của họ.')
     elif oh in range(15,23):
+        st.write('Open Heart')
         st.write('Điểm của bạn:',oh)
         st.write('Đây là dấu hiệu cho thấy bạn bắt đầu thấu hiểu được người khác và biết chấp nhận bản thân mình. Bạn có thể tập lắng nghe và trao đổi với người khác nhiều hơn để hiểu mình, hiểu người hơn. Từ đó, bạn có thể trở nên phong phú hơn.')
     else:
+        st.write('Open Heart')
         st.write('Điểm của bạn:',oh)
         st.write('Đây là dấu hiệu tốt cho thấy bạn có thể có một con tim rộng mở. Hãy cứ là chính mình bạn nhé.')
     if ow in range(6,15):
+        st.write('Open Will')
         st.write('Điểm của bạn:',ow)
         st.write('Bạn ơi, ở mức điểm này, đây có thể là dấu cho thấy bạn chưa thực sự có ý chí cởi mở. Bạn có thể bắt đầu cải thiện tiêu chí này bằng việc thực hiện một vài hành động ngoài vòng an toàn. Hãy học cách quan sát để nhìn ra những cơ hội trong tương lai cũng như dám nắm bắt nó.')
     elif ow in range(15,23):
+        st.write('Open Will')
         st.write('Điểm của bạn:',ow)
         st.write('Đây là dấu hiệu cho thấy bạn đang dần học cách bước ra vùng an toàn của bản thân và dám tiến về phía trước. Bạn hãy dành chỗ cho những điều mới xảy đến với mình nhé.')
     else:
+        st.write('Open Will')
         st.write('Điểm của bạn:',ow)
         st.write('Đây là dấu hiệu tốt cho thấy bạn có thể có một ý chí rộng mở. Hãy dành thêm không gian cho mình và người khác để đón nhận những cơ hội nhé.')
 
