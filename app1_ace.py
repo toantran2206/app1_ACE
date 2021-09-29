@@ -389,30 +389,106 @@ def print_result(om,oh,ow):
 
 def print_ace(ace):
     if ace in range(7,17):
+        st.write('ACE Model')
         st.write('Điểm của bạn:',ace)
         st.write('Có thể bạn đang rơi vào một trong hai trường hợp sau:') 
         st.write('Trường hợp 1: Bạn chưa hiểu rõ khả năng của bản thân, sự chú tâm, kỳ vọng của bản thân. Có thể bạn đang trong quá trình tìm hiểu bản thân của mình và phát triển các năng lực.')
         st.write('Trường hợp 2: Bạn chưa cân bằng được Ability -  Conscientiousness - Expectation. Điều này dẫn đến trong 1 vài trường hợp bạn sẽ rơi vào thất vọng vì khả năng của mình chưa đáp ứng được mong đợi của bạn. Thỉnh thoảng bạn chưa thật sự cam kết với những gì mình đã đặt ra vì có thể đó là điều bạn không thực sự muốn làm.')
     elif ace in range(17,26):
+        st.write('ACE Model')
         st.write('Điểm của bạn:',ace)
         st.write('Bạn hiểu khá rõ những điểm mạnh và điểm yếu của bản thân, đặt ra mục tiêu và luôn hoàn thành mọi việc tốt nhất có thể, tuy nhiên ở một vài tình huống bạn có thể bị mất phương hướng vì mọi việc diễn ra không như ý muốn. Nếu có rơi vào trường hợp này, hãy thử điều chỉnh 1 trong 3 “trụ cột” nhé: phát triển kĩ năng của chính mình, tập trung và làm hết mình cho nhiệm vụ đó hoặc bạn có thể điều chỉnh một xíu về kỳ vọng để xem tình trạng hiện tại của mình có khởi sắc gì không nhé.')
     else:
+        st.write('ACE Model')
         st.write('Điểm của bạn:',ace)
         st.write('Bạn là một người hiểu rất rõ khả năng của bản thân, biết mình có thể làm được gì, luôn đặt ra mục tiêu cuối cùng và nỗ lực hết mình để đạt được mục tiêu đó.')
 
+def print_scm(scm):
+    if scm in range(4,7):
+        st.write('Self-Concept Maintenance')
+        st.write('Điểm của bạn',scm)
+        st.write('Bạn không quan tâm lắm đến giá trị trung thực. Điều này có thể do sự thiếu nhận thức về tính trung thực hoặc bạn có một hệ quy chiếu khác/giá trị khác để đối chiếu và đưa ra lựa chọn làm hay không làm một việc gì đó. Bạn có thể gặp một số rắc rối với người khác về lựa chọn này của bản thân vì đại đa số mọi người vẫn đề cao tính trung thực của một người. Gợi ý cho bạn là bạn cần quan sát để hiểu bản thân mình nhiều hơn. Có thể sau đó, bạn cần thêm sự nỗ lực để thay đổi hoặc sự dũng cảm để giữ vững lập trường của mình.')   
+    elif scm in range(7,11):
+        st.write('Self-Concept Maintenance')
+        st.write('Điểm của bạn',scm)
+        st.write('Bạn có ý thức về giá trị trung thực của bản thân. Bạn có một danh sách các việc thiếu trung thực có thể làm với những lý do thuyết phục. Điều này có thể đem đến cho bạn sự thoải mái. Khi làm những việc trong danh sách này, bạn không thấy bản thân mình bị giảm đi tính trung thực. Ngược lại, khi đứng trước việc thực hiện hay không một hành vi nằm ngoài phạm vi danh sách của bạn. Bạn sẽ đắn đo giữa hai lựa chọn không làm hoặc xếp nó vào danh sách những việc có thể làm. ')
+    elif scm in range(11,14):
+        st.write('Self-Concept Maintenance')
+        st.write('Điểm của bạn',scm)
+        st.write('Bạn ý thức được rõ giá trị trung thực, có sự nỗ lực để sống với giá trị trung thực này. Bạn sẽ gặp khá nhiều mâu thuẫn khi phải lựa chọn trung thực hay thiếu trung thực trong một số trường hợp. Trạng thái mâu thuẫn này sẽ dần được thay thế bởi lựa chọn quyết tâm với giá trị trung thực hoặc thoả hiệp trong một số trường hợp để đạt được sự an ổn. ')
+    else:    
+        st.write('Self-Concept Maintenance')
+        st.write('Điểm của bạn',scm)
+        st.write('Bạn ý thức rất rõ giá trị trung thực của mình và lựa chọn sống với giá trị này. Bạn đồng nhất tính trung thực này từ suy nghĩ đến hành vi. Lựa chọn này có thể khiến bạn gặp một số bất lợi so với thế giới bên ngoài, nhưng nó lại đem đến cho bạn sự an ổn nội tâm. Bạn rất tin tưởng chính mình. Bạn ít khi chủ ý thực hiện một hành vi thiếu trung thực. Những lúc làm một hành vi thiếu trung thực, bạn sẽ dằn vặt trong đau khổ. ')
 
+def print_mov(mov):
+    if mov in range(5,15):
+        st.write('Movtivation')
+        st.write('Điểm của bạn:',mov)
+        st.write('Động cơ ngoại tâm')
+        st.write('Có thể bạn phù hợp với công việc có quy trình cụ thể, logic, mang tính khuôn mẫu, đòi hỏi tính kỷ luật cao.')
+        st.write('Không hẳn động cơ nội tâm mới có ích đâu nè! Động cơ ngoại tâm sẽ có ích khi:')
+        st.write('*Là nguồn phản hồi để cho mình nhận thức rằng mình đang đi đúng hướng')
+        st.write('*Dùng động cơ ngoại tâm (ví dụ: món ăn ngon, quần áo…) như phương tiện làm động lực cho bản thân tiếp thu kiến ​​thức mới, tham gia các hoạt động bổ ích mà ban đầu mình không quá hứng thú và dần biến động cơ ngoại tâm thành nội tâm (Judy Cameron và David Pierce, 2001)')
+        st.write('*Thử kể cho bạn bè, những người bạn tin tưởng nghe về ước mơ, kế hoạch của bạn. Những lời động viên của họ có thể tiếp thêm cho bạn sức mạnh đấy.')
+        st.write('Tuy động cơ ngoại tâm và nội tâm đều có ích nhưng hãy nhớ rằng chính động cơ nội tâm mới tạo ra thôi thúc, sự kiên trì và nỗ lực bền bỉ.')
+    elif mov in range(15,24):
+        st.write('Movtivation')
+        st.write('Điểm của bạn:',mov)
+        st.write('Cân bằng giữa động cơ ngoại tâm và nội tâm:')
+        st.write('Có thể bạn đang trong quá trình chuyển đổi giữa 2 động cơ. Sự cân bằng này giúp bạn phấn đấu để được công nhận, vượt qua thách thức và hoàn thành xuất sắc nhiệm vụ. Tuy động cơ ngoại tâm đến nhanh nhưng hãy nhớ rằng nó cũng "đi" rất nhanh đó. Lời khuyên dành cho bạn:')
+        st.write('1. Học cách tận dụng thêm động cơ ngoại tâm:')
+        st.write('_Đặt ra phần thưởng (ví dụ: lần đi chơi, shopping..) cho bản thân có thể giúp bạn giữ lửa và tiếp tục phấn đấu')
+        st.write('_Chia sẻ hoạt động, thành tích của bản thân, nhận lời khen ')
+        st.write('_Đối với những hoạt động mang tính bắt buộc và khó đem lại động cơ nội tâm, việc dùng các phần thưởng sẽ giúp bạn bắt tay làm nhiệm vụ đó và có thể củng cố và duy trì động cơ nội tâm của mình.')
+        st.write('Đối với những hoạt động mang tính bắt buộc và khó đem lại động cơ nội tâm, việc dùng các phần thưởng sẽ giúp bạn bắt tay làm nhiệm vụ đó và có thể củng cố và duy trì động cơ nội tâm của mình.')
+        st.write('2. Chuyển hoá động cơ ngoại tâm thành nội tâm bằng cách:')
+        st.write('_Thiết lập các mục tiêu đủ thử thách.')
+        st.write('_Tạo sự thú vị trong công việc, biến chúng trở nên đủ hấp dẫn cho bản thân.')
+        st.write('_Phát triển niềm tin vào sự thành công: Hãy suy ngẫm về các điểm mạnh, điểm yếu và đưa ra các lý lẽ để củng cố niềm tin về khả năng thành công của mình. Tuy nhiên, niềm tin này cần được xây dựng trên cơ sở thực tế, và hướng đến hình thành tư duy phát triển, để thúc đẩy bản thân nỗ lực đạt được mục tiêu thay vì tự đánh giá quá cao năng lực bản thân hay cho rằng nhiệm vụ quá đơn giản.')
+        st.write('Hãy tận dụng động cơ ngoại tâm và dần chuyển chúng thành động cơ nội tâm để giảm bớt sự cạnh tranh không cần thiết, nâng cao chất lượng công việc và tối đa hóa tiềm năng của bản thân nghen!')
+    else:
+        st.write('Movtivation')
+        st.write('Điểm của bạn:',mov)
+        st.write('Động cơ nội tâm:')
+        st.write('Có thể bạn phù hợp với công việc cho phép sáng tạo, tự chủ, không rập khuôn. Thật tuyệt vời khi bạn không ngừng nỗ lực trong cuộc sống và không để các yếu tố bên ngoài chi phối quá nhiều.')
+        st.write('1. Vì thế hãy tận dụng động cơ nội tâm bằng cách:')
+        st.write('_Thiết lập các mục tiêu đủ thử thách (tham khảo quy tắc SMART)')
+        st.write('_Tạo sự thú vị trong công việc, biến chúng trở nên đủ hấp dẫn cho bản thân.')
+        st.write('2. Học cách tận dụng thêm động cơ ngoại tâm:')
+        st.write('_Đặt ra phần thưởng cho bản thân khi bạn hoàn thành nhiệm vụ sẽ giúp bạn giữ lửa và có động lực tiếp tục phấn đấu (ví dụ: nghe nhạc, xem film,...)')
+        st.write('_Chia sẻ hoạt động, thành tích và nhận lời khen từ người khác')
+        st.write('_Đối với những hoạt động bắt buộc khó đem lại động cơ nội tâm thì việc dùng các phần thưởng sẽ giúp bạn bắt tay vào nhiệm vụ đó và còn có thể củng cố và duy trì động cơ nội tâm của cá nhân.')
+        st.write('Động cơ ngoại tâm đóng vai trò trung gian, và trong điều kiện thích hợp, nó có thể dần được chuyển hoá thành động cơ nội tâm. Hãy học cách tận dụng động cơ ngoại tâm để thúc đẩy động cơ nội tâm vốn có và tiếp tục giữ động cơ nội tâm của mình bạn nhé!')
+
+def print_ref(ref):
+    st.write('Reflexivity')
+    st.write('Reflexivity được đánh giá dựa trên:')
+    st.write("Curiosity, openness and a willingness to rethink one's position")
+    if ref in range(6,15):
+        st.write('Điểm của bạn:',ref)
+        st.write('Bạn có reflexivity cao, thường xuyên có xu hướng tò mò, cởi mở, sẵn lòng,... khi đối diện với những vấn đề, tình huống thực tế. Bạn luôn nhìn một vấn đề bằng nhiều góc nhìn và sẵn sàng đón nhận tất cả quan điểm khác biệt. Điều này sẽ mang bạn đến khả năng thấu hiểu bản thân và thích ứng nhanh với mọi hoàn cảnh.')
+    elif ref in range(15,23):
+        st.write('Điểm của bạn:',ref)
+        st.write('Bạn có reflexivity trung bình. Bạn có thể lắng nghe quan điểm của người khác trong những điều kiện bình thường. Bạn vẫn còn hơi bảo thủ và mất khá nhiều thời gian để chấp nhận một quan điểm mới của người khác.')
+    else:
+        st.write('Điểm của bạn:',ref)
+        st.write('Bạn có reflexivity thấp. Bạn dễ đưa ra quyết định dựa trên ý kiến quan chủ quan của mình, điều này có thể dẫn bạn đến sai lầm. Bên cạnh đó, bạn khó tiếp nhận những ý kiến đóng góp hoặc phản hồi của người khác dẫn đến mất cơ hội nhận ra những thiếu sót của bản thân.')
 
 
 if __name__ == "__main__":
     main()
     result_ace = page_second()
-    re_om = page_third()
-    page_fourth()
-    page_fifth()
-    page_sixth()
+    re_scm = page_third()
+    re_om = page_fourth()
+    re_mov = page_fifth()
+    re_ref = page_sixth()
     if re_om >= 14:
         re_oh,re_ow = page_seventh()
     if st.button("Finish"):
         print_ace(result_ace)
+        print_scm(re_scm)
         print_result(re_om,re_oh,re_ow)
+        print_mov(re_mov)
+        print_ref(re_ref)
     
