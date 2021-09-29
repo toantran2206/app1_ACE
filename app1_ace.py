@@ -104,7 +104,7 @@ def page_second():
     q5 = st.radio('5. Tôi thường đạt được mục tiêu đã đặt ra',options=choices)
     score_tmp = calculate(score_tmp,q5)
     score_ace += score_tmp
-    st.write('Score: ',score_ace)
+    # st.write('Score: ',score_ace)
     if st.button("Submit"):
         return score_ace
     # pages = ['Page1','Page2','Page3']
@@ -182,7 +182,8 @@ def page_third():
     q4 = st.radio('4.Đứng trước một cơ hội để thiếu trung thực (để có một lợi ích hoặc tránh một nỗi đau) nhưng không bị ai phát hiện, tôi sẽ:', options= choice4.values())
     score_scm += cal(score_scm,q4,choice4)
 
-    st.write('Score: ',score_scm)
+    if st.button("Submit"):
+        return score_scm
 
 def page_fourth():
     st.title("Open Mind")
@@ -206,9 +207,12 @@ def page_fourth():
 
     q5 = st.radio('5. Tôi thường cho rằng ý kiến của mình có thể sai.',options=choices)
     score_om += calculate(score_om,q5)
-    st.write('Score: ',score_om)
-    if score_om >= 14 and st.button('Submit'):
-        page_seventh()
+    # st.write('Score: ',score_om)
+    if st.button('Submit'):
+        if score_om >= 14:
+            page_seventh()
+        return score_om
+        
 
 def page_fifth():
     st.title("Motivation")
@@ -239,7 +243,10 @@ def page_fifth():
     q6 = st.radio('6. Tôi thích khoe những thành tích của tôi lên mạng xã hội.',options=choices)
     st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
     score_mov += calculate(score_mov,q6)
-    st.write('Score: ',score_mov)
+    
+    #Submit result and prepare for advice
+    if st.button("Submit"):
+        return score_mov
 
 def page_sixth():
     st.title("Reflexivity")
@@ -269,7 +276,11 @@ def page_sixth():
     q6 = st.radio('6. Tôi có những nguyên tắc đạo đức làm nền tảng và hiếm khi chất vấn chúng.',options=choices)
     st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
     score_ref += calculate(score_ref,q6)
-    st.write('Score: ',score_ref)
+    
+    #Submit result and prepare for advice
+    if st.button("Submit"):
+        return score_ref
+
 
 
 def page_seventh():
@@ -302,7 +313,7 @@ def page_seventh():
     q6 = st.radio('6. Tôi thường lắng nghe người khác chia sẻ mà không nghi ngờ.',options=choices)
     st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
     score_oh += calculate(score_oh,q6)
-    st.write('Score: ',score_oh)
+    # st.write('Score: ',score_oh)
 
     #Open Will
     q1 = st.radio('1. Trong trường hợp cấp bách, tôi chấp nhận ra quyết định khi không đủ thông tin hơn là trì hoãn để thu thập thêm thông tin.', options= choices)
@@ -329,7 +340,47 @@ def page_seventh():
     q6 = st.radio('6. Khi đứng trước cơ hội mới, tôi sẵn sàng đón nhận dù biết rằng mình có thể thất bại.',options=choices)
     st.write('<style>div.row-widget.stRadio > div{flex-direction:row;} </style>', unsafe_allow_html=True)
     score_ow += calculate(score_ow,q6)
-    st.write('Score: ',score_ow)
+    # st.write('Score: ',score_ow)
+
+    #Submit result and prepare for advice
+    if st.button("Submit"):
+        return score_oh and score_ow
+
+def print_om(om):
+    if om in range(5,12):
+        st.write('Điểm của bạn:',om)
+        st.write('Trong mức điểm số này, bạn chưa cởi mở lắm với những tư tưởng khác biệt. Bạn hãy cố gắng lắng nghe những quan điểm khác biệt vì nó có thể giúp bạn trở nên phong phú hơn, hiểu sâu sắc hơn góc nhìn của chính mình.')
+    elif om in range (12,19):
+        st.write('Điểm của bạn:',om)
+        st.write('Trong mức điểm số này, bạn có thể không open mind như bạn nghĩ. Tuy nhiên, hầu hết mọi người đều có thể không đạt được 1 trong 4 tiêu chí trên. Bạn có thể bắt đầu bằng cách học theo Benjamin Fraklin:”I could be wrong, but…”')
+    else:
+        st.write('Điểm của bạn:',om)
+        st.write('Trong mức điểm số, đây là dấu hiệu tốt cho thấy bạn có sự cởi mở, tôn trọng những tư tưởng, ý kiến khác cũng như có khả năng làm chủ cảm xúc của mình.')
+
+def print_oh_ow(oh,ow):   
+    if oh in range(6,15):
+        st.write('Điểm của bạn:',oh)
+        st.write('Đôi khi, chúng ta không cần cố gắng tỏ ra hoàn hảo, bạn nên can đảm chấp nhận con người thật của chính mình, từ đó chia sẻ những điều thiếu sót cho người khác. Bạn có thể cố gắng đặt mình vào vị trí của người khác để hiểu hơn lựa chọn của họ.')
+    elif oh in range(15,23):
+        st.write('Điểm của bạn:',oh)
+        st.write('Đây là dấu hiệu cho thấy bạn bắt đầu thấu hiểu được người khác và biết chấp nhận bản thân mình. Bạn có thể tập lắng nghe và trao đổi với người khác nhiều hơn để hiểu mình, hiểu người hơn. Từ đó, bạn có thể trở nên phong phú hơn.')
+    else:
+        st.write('Điểm của bạn:',oh)
+        st.write('Đây là dấu hiệu tốt cho thấy bạn có thể có một con tim rộng mở. Hãy cứ là chính mình bạn nhé.')
+
+def print_ace(ace):
+    if ace in range(7,17):
+        st.write('Điểm của bạn:',ace)
+        st.write('Có thể bạn đang rơi vào một trong hai trường hợp sau:') 
+        st.write('Trường hợp 1: Bạn chưa hiểu rõ khả năng của bản thân, sự chú tâm, kỳ vọng của bản thân. Có thể bạn đang trong quá trình tìm hiểu bản thân của mình và phát triển các năng lực.')
+        st.write('Trường hợp 2: Bạn chưa cân bằng được Ability -  Conscientiousness - Expectation. Điều này dẫn đến trong 1 vài trường hợp bạn sẽ rơi vào thất vọng vì khả năng của mình chưa đáp ứng được mong đợi của bạn. Thỉnh thoảng bạn chưa thật sự cam kết với những gì mình đã đặt ra vì có thể đó là điều bạn không thực sự muốn làm.')
+    elif ace in range(17,26):
+        st.write('Điểm của bạn:',ace)
+        st.write('Bạn hiểu khá rõ những điểm mạnh và điểm yếu của bản thân, đặt ra mục tiêu và luôn hoàn thành mọi việc tốt nhất có thể, tuy nhiên ở một vài tình huống bạn có thể bị mất phương hướng vì mọi việc diễn ra không như ý muốn. Nếu có rơi vào trường hợp này, hãy thử điều chỉnh 1 trong 3 “trụ cột” nhé: phát triển kĩ năng của chính mình, tập trung và làm hết mình cho nhiệm vụ đó hoặc bạn có thể điều chỉnh một xíu về kỳ vọng để xem tình trạng hiện tại của mình có khởi sắc gì không nhé.')
+    else:
+        st.write('Điểm của bạn:',ace)
+        st.write('Bạn là một người hiểu rất rõ khả năng của bản thân, biết mình có thể làm được gì, luôn đặt ra mục tiêu cuối cùng và nỗ lực hết mình để đạt được mục tiêu đó.')
+
 
 
 
@@ -340,4 +391,4 @@ if __name__ == "__main__":
     page_fourth()
     page_fifth()
     page_sixth()
-    st.write("Result:",result_ace)
+    print_ace(result_ace)
